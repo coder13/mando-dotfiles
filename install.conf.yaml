@@ -9,6 +9,7 @@
     ~/.vimrc: vimrc
     ~/.Xresources: Xresources
     ~/.config/i3: i3
+    ~/.config/compton.conf: compton.conf
 
 - create:
     - ~/.vim/undo-history
