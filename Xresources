@@ -1,0 +1,165 @@
+! special
+#define def_foreground #93a1a1
+#define def_background #002b36
+#define def_cursorColor #93a1a1
+
+! black
+#define def_color0 #002b36
+#define def_color8 #657b83
+
+! red
+#define def_color1 #dc322f
+#define def_color9 #dc322f
+
+! green
+#define def_color2 #859900
+#define def_color10 #859900
+
+! yellow
+#define def_color3 #b58900
+#define def_color11 #b58900
+
+! blue
+#define def_color4 #268bd2
+#define def_color12 #268bd2
+
+! magenta
+#define def_color5 #6c71c4
+#define def_color13 #6c71c4
+
+! cyan
+#define def_color6 #2aa198
+#define def_color14 #2aa198
+
+! white
+#define def_color7 #93a1a1
+#define def_color15 #fdf6e3
+
+! special
+*.foreground: def_foreground
+*.background: def_background
+*.cursorColor: def_cursorColor
+
+! black
+*.color0: def_color0
+*.color8: def_color8
+
+! red
+*.color1: def_color1
+*.color9: def_color9
+
+! green
+*.color2: def_color2
+*.color10: def_color10
+
+! yellow
+*.color3: def_color3
+*.color11: def_color11
+
+! blue
+*.color4: def_color4
+*.color12: def_color12
+
+! magenta
+*.color5: def_color5
+*.color13: def_color13
+
+! cyan
+*.color6: def_color6
+*.color14: def_color14
+
+! white
+*.color7: def_color7
+*.color15: def_color15
+
+! Xft
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+
+! rofi
+rofi.opacity:     92
+rofi.width:       1000
+rofi.padding:     0
+rofi.lines:       15
+rofi.columns:     1
+rofi.font:        Hack 12
+rofi.bw:          1
+rofi.eh:          1
+rofi.fixed-num-lines:   false
+rofi.hmode:             false
+rofi.terminal:          urxvt
+rofi.ssh-set-title:     true
+!
+rofi.bg:         def_color0
+rofi.fg:         def_color15
+rofi.hlfg:       def_color0
+rofi.hlbg:       def_color15
+rofi.bc:         def_color15
+
+! ----- urxvt ------------------------------------------------------------------
+! see: http://510x.se/notes/posts/Configuring_and_using_rxvt-unicode/
+!      http://lists.schmorp.de/pipermail/rxvt-unicode/
+
+! ----- Fonts ------------------------------------------------------------------
+! the short names for fonts are in /usr/share/fonts/X11/misc/fonts.alias
+! to specify an X11 core font, just specify its name or prefix it with "x:". 
+! To specify an XFT-font, you need to prefix it with "xft:", e.g.:
+!               URxvt -fn "xft:Bitstream Vera Sans Mono:pixelsize=15"
+!               URxvt -fn "9x15bold,xft:Bitstream Vera Sans Mono"
+!
+! should only be xft=fontconfig so these 'core' fonts should be changed. 
+! updated 2015-11-25
+URxvt.font:         xft:Hack:style=Regular:pixelsize=14:antialias=true
+URxvt.boldFont:     xft:Hack:style=Bold:pixelsize=14:antialias=true
+
+! UnderLine:
+URxvt.colorULMode:  on
+URxvt.colorUL:     	def_color15
+URxvt.underlineColor:   def_color15
+
+URxvt.intensityStyles:	true
+
+! ----- Scroll: ---------
+URxvt.scrollBar:        false
+URxvt.scrollBar_right:  false
+URxvt.termname:         rxvt-unicode-256color
+URxvt.savelines:        1000
+
+! ----- Border: ---------
+URxvt.internalBorder:   2
+URxvt.externalBorder:   0
+
+! ----- Transparency: ---
+URxvt.transparent:      false
+
+! URxvt..shading:   change the background (always)
+! 0 to 99 darkens, 101 to 200 lightens
+! Dont think this is having any effect. Orignially 120
+! Only extreme (20 and 200) have any effect. Really should
+! change the actual BD colour
+! URxvt.shading:          20
+
+! URxvt.depth: 32
+! URxvt.background: rgba:0000/0000/0200/c800
+
+! Pasting
+URxvt.keysym.C-v: perl:clipboard:paste
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! Disables the insanely annoying Ctrl+Shift shortcut that enters ISO14755 mode
+URxvt.iso14755:       false
+URxvt.iso14755_52:    false
+
+! Enables opening links
+URxvt.perl-ext-common: default,matcher,config-reload
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg6
+
